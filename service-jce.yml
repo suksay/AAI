@@ -35,10 +35,10 @@ services:
   cassandra:
     image: cassandra:3.11
     container_name: jce-cassandra
-    environnement:
+    environment:
       HEAP_NEWSIZE: 1M
       MAX_HEAP_SIZE: 1024M
-      - "CASSANDRA_START_RPC=true"
+      CASSANDRA_START_RPC: "true"
     ports:
       - "9042:9042"
       - "9160:9160"
