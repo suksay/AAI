@@ -17,7 +17,7 @@ version: "3"
 services:
   janusgraph:
     image: janusgraph/janusgraph:latest
-    container_name: janusgraph
+    container_name: jce-janusgraph
     environment:
       JANUS_PROPS_TEMPLATE: cassandra-es
       janusgraph.storage.backend: cql
@@ -38,7 +38,7 @@ services:
     environment:
       HEAP_NEWSIZE: 1M
       MAX_HEAP_SIZE: 1024M
-      CASSANDRA_START_RPC: "true"
+      - "CASSANDRA_START_RPC=true"
     ports:
       - "9042:9042"
       - "9160:9160"
@@ -63,6 +63,8 @@ services:
   aai-resources:
     image: onap/aai-resources:1.7.2
     container_name: aai-resources
+    ports:
+      - "8447:8447"
     networks:
       - jce-network
       
