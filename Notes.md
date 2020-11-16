@@ -76,6 +76,17 @@ storage.hostname=jce-cassandra #Cassandra address according to cassandra contain
 storage.cql.keyspace=onap #Keyspace for our databse in Cassandra
 ```
 
+   Step 2: They are copied into the aai-resources container during its creation with spcefical Dockerfile called aai_resources_init
+
+```
+#AAI Resources initialisation with cassandra properties
+
+FROM onap/aai-resources:1.7.2
+
+COPY janusgraph-cached.properties /opt/app/aai-resources/resources/etc/appprops/janusgraph-cached.properties
+COPY janusgraph-realtime.properties /opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
+```
+
 ## CDS and AAI connection
 
     - Add the BluePrint Processor and Command Executor services on the same network as the aai-resources service to be able to execute REST requests on Cassandra via aai-resoruces.
