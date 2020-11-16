@@ -62,8 +62,7 @@ aai-resource : AAI Resources Micro Service providing CRUD REST APIs for inventor
 ```
 
   2. Configure Janusgraph so that it can connect to Cassandra. 
-
-    - Configure aai-resources through the janusgraph-*.properties files so that it can store data in Cassandra.
+  3. Configure aai-resources through the janusgraph-*.properties files so that it can store data in Cassandra.
 
 2. CDS and AAI connection
 
