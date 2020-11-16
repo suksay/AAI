@@ -1,8 +1,9 @@
 # AAI Integration
 
 The integration of AAI was done in several steps:
-1. Installation of AAI components :
-    - Create a docker-component allowing to have Janusgraph, Cassandra (3.11) and aai-resource (version 1.7.2) services.
+## Installation of AAI components 
+
+  1. Create a docker-component allowing to have Janusgraph, Cassandra (3.11) and aai-resource (version 1.7.2) services.
 
 Janusgraph : A&AI uses Janusgraph for persistence which is a property graphmodel, where a graph is a set of vertices with edges between them. JanusGraph stores graphs in adjacency list format which means that a
 graph is stored as a collection of vertices with their adjacency list.
@@ -60,7 +61,7 @@ aai-resource : AAI Resources Micro Service providing CRUD REST APIs for inventor
             - storage_network
 ```
 
-    - Configure Janusgraph so that it can connect to Cassandra. 
+  2. Configure Janusgraph so that it can connect to Cassandra. 
 
     - Configure aai-resources through the janusgraph-*.properties files so that it can store data in Cassandra.
 
