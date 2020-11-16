@@ -12,7 +12,11 @@ Cassandra : Apache Cassandra is a highly-scalable partitioned row store. Rows ar
 
 aai-resource : AAI Resources Micro Service providing CRUD REST APIs for inventory resources. This microservice provides the main path for updating and searching the graph - java-types defined in the OXM file for each version of the API define the REST endpoints.
 
+
+
 ```
+ #####  We create a 'storage_network' for storage block elements
+
  #AAI Resources
     aai-resources:
         #Change janusgrap properties files in aai-resource with cassandra hostname
@@ -23,7 +27,7 @@ aai-resource : AAI Resources Micro Service providing CRUD REST APIs for inventor
         #depends_on: 
         #    - jce-cassandra
         ports:
-            - "8447:8447"
+            - "8447:8447" #Port use to send REST resquest to AAI Resources container
         networks:
             - cds_network
             - storage_network    
@@ -33,9 +37,9 @@ aai-resource : AAI Resources Micro Service providing CRUD REST APIs for inventor
         container_name: jce-janusgraph
         environment:
             JANUS_PROPS_TEMPLATE: cassandra-es
-            janusgraph.storage.backend: cql
-            janusgraph.storage.hostname: jce-cassandra
-            janusgraph.index.search.hostname: jce-elastic
+            janusgraph.storage.backend: cql #We specify that we use a cassandra backend 
+            janusgraph.storage.hostname: jce-cassandra   #We specify cassandra's container address to Janusgraph
+            #janusgraph.index.search.hostname: jce-elastic
         ports:
             - "8182:8182"
         healthcheck:
@@ -51,24 +55,33 @@ aai-resource : AAI Resources Micro Service providing CRUD REST APIs for inventor
         image: cassandra:3.11
         container_name: jce-cassandra
         environment:
-            #HEAP_NEWSIZE: 1M
-            #MAX_HEAP_SIZE: 1024M
-            - "CASSANDRA_START_RPC=true"
-        ports:
-            - "9042:9042"
+            - "CASSANDRA_START_RPC=true" 
+        ports:    #9042 and 9160 are use to comunique with AAi-resources and Janusgraph
+            - "9042:9042" 
             - "9160:9160"
         networks:
             - storage_network
 ```
 
-  2. Configure Janusgraph so that it can connect to Cassandra. 
-  3. Configure aai-resources through the janusgraph-*.properties files so that it can store data in Cassandra.
+  2. Configure aai-resources through the janusgraph-*.properties files so that it can store data in Cassandra.
 
-2. CDS and AAI connection
+  In the aai-resources container, we have to configure the files allowing it to store the data in Cassandra. We chose to do this when we created the container. 
+
+  Setp 1 : We pre-configure the janusgraph-cached.properties and janusgraph-cached.properties files locally with the information from Cassandra.
+
+```
+    # the following parameters are not reloaded automatically and require a manual bounce
+storage.backend=cql   #Cassandra like storage backend 
+storage.hostname=jce-cassandra #Cassandra address according to cassandra container name
+storage.cql.keyspace=onap #Keyspace for our databse in Cassandra
+
+```
+
+## CDS and AAI connection
 
     - Add the BluePrint Processor and Command Executor services on the same network as the aai-resources service to be able to execute REST requests on Cassandra via aai-resoruces.
 
-3. Creation of Microwaves models
+## Creation of Microwaves models
 
     - To be able to store our equipment, we must first create models of our equipment in AAI. We create the main model for all the microwaves equipments (PUT /service-design-and-creation/models/model/microwave-equipment-id) then the specific Huawei and NEC models (PUT /service-design-and-creation/models/model/{model-invariant-id}/model-ver/{nec or huawei id}).
 
