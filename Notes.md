@@ -142,9 +142,8 @@ command-executor:
 
 ## Creation of Microwaves models
 
-    Before registering equipment in AAI, the pre-requisite is that the model of the equipment exists. Usually its models are provided to AAI by SDC that we do not use in our project. 
-    We will therefore register our own models in AAI at the initialization of our project.  
-
-    We use the file aai_init.py (in Microwave_ONAP) to create a main model representing our microwave-equipment-id equipment and then derived models for the huawei and nec.
+Before registering equipment in AAI, the pre-requisite is that the model of the equipment exists. Usually its models are provided to AAI by SDC that we do not use in our project. 
+We will therefore register our own models in AAI at the initialization of our project.  
+We use the file aai_init.py (in Microwave_ONAP) to create a main model representing our microwave-equipment-id equipment and then derived models for the huawei and nec.
 
     
