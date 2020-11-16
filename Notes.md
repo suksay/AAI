@@ -15,52 +15,52 @@ aai-resource : AAI Resources Micro Service providing CRUD REST APIs for inventor
 
 
 ```
- #####  We create a 'storage_network' for storage block elements
+#####  We create a 'storage_network' for storage block elements
 
- #AAI Resources
-    aai-resources:
-        #Change janusgrap properties files in aai-resource with cassandra hostname
-        build:
-           context: .
-           dockerfile: aai_resources_init
-        container_name: aai-resources
-        #depends_on: 
-        #    - jce-cassandra
-        ports:
-            - "8447:8447" #Port use to send REST resquest to AAI Resources container
-        networks:
-            - cds_network
-            - storage_network    
-    
-    janusgraph:
-        image: janusgraph/janusgraph:latest
-        container_name: jce-janusgraph
-        environment:
-            JANUS_PROPS_TEMPLATE: cassandra-es
-            janusgraph.storage.backend: cql #We specify that we use a cassandra backend 
-            janusgraph.storage.hostname: jce-cassandra   #We specify cassandra's container address to Janusgraph
-            #janusgraph.index.search.hostname: jce-elastic
-        ports:
-            - "8182:8182"
-        healthcheck:
-            test: ["CMD", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy"]
-            interval: 10s
-            timeout: 30s
-            retries: 3
-        networks:
-            - storage_network
-    
-    #Cassandra
-    cassandra:
-        image: cassandra:3.11
-        container_name: jce-cassandra
-        environment:
-            - "CASSANDRA_START_RPC=true" 
-        ports:    #9042 and 9160 are use to comunique with AAi-resources and Janusgraph
-            - "9042:9042" 
-            - "9160:9160"
-        networks:
-            - storage_network
+#AAI Resources
+aai-resources:
+    #Change janusgrap properties files in aai-resource with cassandra hostname
+    build:
+        context: .
+        dockerfile: aai_resources_init
+    container_name: aai-resources
+    #depends_on: 
+    #    - jce-cassandra
+    ports:
+        - "8447:8447" #Port use to send REST resquest to AAI Resources container
+    networks:
+        - cds_network
+        - storage_network    
+
+janusgraph:
+    image: janusgraph/janusgraph:latest
+    container_name: jce-janusgraph
+    environment:
+        JANUS_PROPS_TEMPLATE: cassandra-es
+        janusgraph.storage.backend: cql #We specify that we use a cassandra backend 
+        janusgraph.storage.hostname: jce-cassandra   #We specify cassandra's container address to Janusgraph
+        #janusgraph.index.search.hostname: jce-elastic
+    ports:
+        - "8182:8182"
+    healthcheck:
+        test: ["CMD", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy"]
+        interval: 10s
+        timeout: 30s
+        retries: 3
+    networks:
+        - storage_network
+
+#Cassandra
+cassandra:
+    image: cassandra:3.11
+    container_name: jce-cassandra
+    environment:
+        - "CASSANDRA_START_RPC=true" 
+    ports:    #9042 and 9160 are use to comunique with AAi-resources and Janusgraph
+        - "9042:9042" 
+        - "9160:9160"
+    networks:
+        - storage_network
 ```
 
   2. Configure aai-resources through the janusgraph-*.properties files so that it can store data in Cassandra.
@@ -70,11 +70,10 @@ aai-resource : AAI Resources Micro Service providing CRUD REST APIs for inventor
   Setp 1 : We pre-configure the janusgraph-cached.properties and janusgraph-cached.properties files locally with the information from Cassandra.
 
 ```
-    # the following parameters are not reloaded automatically and require a manual bounce
+#The following parameters are not reloaded automatically and require a manual bounce
 storage.backend=cql   #Cassandra like storage backend 
 storage.hostname=jce-cassandra #Cassandra address according to cassandra container name
 storage.cql.keyspace=onap #Keyspace for our databse in Cassandra
-
 ```
 
 ## CDS and AAI connection
