@@ -1,6 +1,7 @@
 # AAI Integration
 
 The integration of AAI was done in several steps:
+
 ## Installation of AAI components 
 
   1. Create a docker-component allowing to have Janusgraph, Cassandra (3.11) and aai-resource (version 1.7.2) services.
@@ -89,10 +90,61 @@ COPY janusgraph-realtime.properties /opt/app/aai-resources/resources/etc/appprop
 
 ## CDS and AAI connection
 
-    - Add the BluePrint Processor and Command Executor services on the same network as the aai-resources service to be able to execute REST requests on Cassandra via aai-resoruces.
+    Blueprint Processor and Command Execuder who are in charge of executing our workflows must be able to connect to aai-resources, so we add them to storage_network.
+In our python scripts for connecting to aai-resources (see aai_requests.py in Microwave_ONAP), we use the address and authentication information that we pass to the Blueprint Processor and Command Execuder containers via environment variables. This maneuver allows us to have a correct code even if the address of the aai-resources container changes.
+
+
+```
+#Blueprint Processor
+blueprints-processor:
+    depends_on: 
+        - db
+    build:
+        context: .
+        dockerfile: bp_init
+    container_name: bp-rest
+    ports:
+    - "8000:8080"
+    restart: always
+    environment:
+        APP_NAME: BlueprintsProcessor
+        BUNDLEVERSION: 1.0.0
+        APP_CONFIG_HOME: /opt/app/onap/config
+        STICKYSELECTORKEY:
+        ENVCONTEXT: dev
+        AAI_ADDRESS: aai-resources
+        AAI_USERNAME: AAI
+        AAI_PASSWORD: AAI
+    volumes: 
+        - ~/deploy:/opt/app/onap/blueprints/deploy/
+    networks:
+        - cds_network
+        - storage_network
+
+#Command Executor       
+command-executor:
+    depends_on: 
+        - db
+    image: onap/ccsdk-commandexecutor:0.7.5
+    container_name: command-exec
+    environment:
+        AAI_ADDRESS: aai-resources
+    ports:
+        - "50051:50051"
+        - "5555:5555"
+    restart: always
+    volumes: 
+        -  ~/deploy:/opt/app/onap/blueprints/deploy/
+    networks:
+        - cds_network
+        - storage_network
+```
 
 ## Creation of Microwaves models
 
-    - To be able to store our equipment, we must first create models of our equipment in AAI. We create the main model for all the microwaves equipments (PUT /service-design-and-creation/models/model/microwave-equipment-id) then the specific Huawei and NEC models (PUT /service-design-and-creation/models/model/{model-invariant-id}/model-ver/{nec or huawei id}).
+    Before registering equipment in AAI, the pre-requisite is that the model of the equipment exists. Usually its models are provided to AAI by SDC that we do not use in our project. 
+    We will therefore register our own models in AAI at the initialization of our project.  
 
-    - Once the models are created, we can register our equipment in /network/devices. 
+    We use the file aai_init.py (in Microwave_ONAP) to create a main model representing our microwave-equipment-id equipment and then derived models for the huawei and nec.
+
+    
