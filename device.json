@@ -1,0 +1,11 @@
+{
+    "device-id" : "test-device-id",
+    "device-name" : "test-device-name",
+    "vendor" : "test-vendor",
+    "system-ip" : "test-system-ip",
+    "system-ipv4" : "test-system-ipv4",
+    "description" : "We use model-customization-id for NE ID ",
+    "model-customization-id" : "",
+    "model-invariant-id" : "microwave-equipment-id",
+    "model-version-id" : "huawei-microwave"
+}
