@@ -3,7 +3,7 @@
     "pnf-name2" : "device-name",
     "selflink" : "/network/devices/device/test-device-id",
     "equip-type" : "microwave",
-    "equip-vendor" : "huawei"
+    "equip-vendor" : "huawei",
     "model-customization-id" : "",
     "model-invariant-id" : "microwave-equipment-id",
     "model-version-id" : "huawei-microwave"
