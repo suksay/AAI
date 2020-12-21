@@ -4,6 +4,7 @@
     "selflink" : "/network/devices/device/test-device-id",
     "equip-type" : "microwave",
     "equip-vendor" : "huawei",
+    "in-maint" : "true",
     "model-customization-id" : "",
     "model-invariant-id" : "microwave-equipment-id",
     "model-version-id" : "huawei-microwave"
