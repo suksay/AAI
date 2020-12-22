@@ -1551,11 +1551,11 @@
 		{
 			"from": "pnf",
 			"to": "device",
-			"label": "tosca.relationships.network.BindsTo",
+			"label": "isA",
 			"direction": "OUT",
 			"multiplicity": "ONE2ONE",
 			"contains-other-v": "NONE",
-			"delete-other-v": "!${direction}",
+			"delete-other-v": "NONE",
 			"prevent-delete": "NONE",
 			"default": "true",
 			"description":"Relation between Device and PNF"
