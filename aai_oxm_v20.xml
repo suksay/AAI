@@ -5702,6 +5702,7 @@
             <xml-properties>
                 <xml-property name="description" value="PNF represents a physical network function. typically equipment used in the D1 world. in 1607, this will be populated by SDN-C to represent a premises router that a uCPE connects to. But this can be used to represent any physical device that is not an AIC node or uCPE."/>
                 <xml-property name="indexedProps" value="pnf-name,orchestration-status,inv-status,model-invariant-id,model-version-id,operational-status,admin-status,nf-role,prov-status,nf-naming-code"/>
+                <xml-property name="dependentOn" value="device"/>
                 <xml-property name="searchable" value="pnf-name"/>
                 <xml-property name="uniqueProps" value="pnf-name"/>
                 <xml-property name="container" value="pnfs"/>
