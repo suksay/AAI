@@ -1,7 +1,6 @@
 {
     "pnf-name" : "test-device-id",
     "pnf-name2" : "device-name",
-    "selflink" : "/network/devices/device/test-device-id",
     "equip-type" : "microwave",
     "equip-vendor" : "huawei",
     "in-maint" : "true",
