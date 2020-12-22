@@ -13,8 +13,8 @@
     "selflink": "example-selflink-val-84993",
     "operational-status": "example-operational-status-val-41893",
     "model-customization-id": "example-model-customization-id-val-70384",
-    "model-invariant-id": "example-model-invariant-id-val-63634",
-    "model-version-id": "example-model-version-id-val-45157",
+    "model-invariant-id": "microwave-equipment-id",
+    "model-version-id": "huawei-microwave",
     "pnfs": {
       "pnf": [
         {
@@ -45,8 +45,8 @@
           "admin-status": "example-admin-status-val-97000",
           "operational-status": "example-operational-status-val-85886",
           "model-customization-id": "example-model-customization-id-val-41418",
-          "model-invariant-id": "example-model-invariant-id-val-88472",
-          "model-version-id": "example-model-version-id-val-85134",
+          "model-invariant-id": "microwave-equipment-id",
+          "model-version-id": "huawei-microwave",
           "pnf-ipv4-address": "example-pnf-ipv4-address-val-23008",
           "pnf-ipv6-address": "example-pnf-ipv6-address-val-23362",
           "software-versions": {
