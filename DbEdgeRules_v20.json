@@ -1551,7 +1551,7 @@
 		{
 			"from": "pnf",
 			"to": "device",
-			"label": "isA",
+			"label": "org.onap.relationships.inventory.BridgedTo",
 			"direction": "OUT",
 			"multiplicity": "ONE2ONE",
 			"contains-other-v": "NONE",
