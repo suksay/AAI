@@ -5702,7 +5702,6 @@
             <xml-properties>
                 <xml-property name="description" value="PNF represents a physical network function. typically equipment used in the D1 world. in 1607, this will be populated by SDN-C to represent a premises router that a uCPE connects to. But this can be used to represent any physical device that is not an AIC node or uCPE."/>
                 <xml-property name="indexedProps" value="pnf-name,orchestration-status,inv-status,model-invariant-id,model-version-id,operational-status,admin-status,nf-role,prov-status,nf-naming-code"/>
-                <xml-property name="dependentOn" value="device"/>
                 <xml-property name="searchable" value="pnf-name"/>
                 <xml-property name="uniqueProps" value="pnf-name"/>
                 <xml-property name="container" value="pnfs"/>
@@ -5829,7 +5828,6 @@
                     </xml-properties>
                 </xml-element>
                 <xml-element java-attribute="relationshipList" name="relationship-list" type="inventory.aai.onap.org.v20.RelationshipList"/>
-                <xml-element java-attribute="pInterfaces" name="p-interfaces" type="inventory.aai.onap.org.v20.PInterfaces"/>
             </java-attributes>
             <xml-properties>
                 <xml-property name="description" value="Collection of physical connections, typically between p-interfaces"/>
@@ -8726,7 +8724,6 @@
 					</xml-properties>
 				</xml-element>
 				<xml-element java-attribute="relationshipList" name="relationship-list" type="inventory.aai.onap.org.v20.RelationshipList"/>
-                <xml-element java-attribute="pnfs" name="pnfs" type="inventory.aai.onap.org.v20.Pnfs" />
 			</java-attributes>
 			<xml-properties>
 				<xml-property name="description" value="Instance of a device"/>
