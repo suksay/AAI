@@ -1,4 +1,5 @@
 {
   "interface-name" : "Ethernet0_1",
-  "equipment-identifier" : "3"
+  "equipment-identifier" : "3",
+  "in-maint" : "true"
 }
