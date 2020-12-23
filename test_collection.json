@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "eecf159c-893f-452e-95b3-dc7155e154f3",
+		"name": "AAI_for_docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Main Model",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-TransactionId",
+						"value": "9999"
+					},
+					{
+						"key": "X-FromAppId",
+						"value": "jimmy-postman"
+					},
+					{
+						"key": "Real-Time",
+						"value": "true"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic QUFJOkFBSQ=="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"model-invariant-id\" : \"microwave-equipment-id\",\r\n    \"model-type\" : \"resource\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:8447/aai/v20/service-design-and-creation/models/model/microwave-equipment-id",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8447",
+					"path": [
+						"aai",
+						"v20",
+						"service-design-and-creation",
+						"models",
+						"model",
+						"microwave-equipment-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Huawei Model",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-TransactionId",
+						"value": "9999"
+					},
+					{
+						"key": "X-FromAppId",
+						"value": "jimmy-postman"
+					},
+					{
+						"key": "Real-Time",
+						"value": "true"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic QUFJOkFBSQ=="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"model-invariant-id\" : \"microwave-equipment-id\",\r\n    \"model-type\" : \"resource\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:8447/aai/v20/service-design-and-creation/models/model/microwave-equipment-id",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8447",
+					"path": [
+						"aai",
+						"v20",
+						"service-design-and-creation",
+						"models",
+						"model",
+						"microwave-equipment-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create PNF",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-TransactionId",
+						"value": "9999"
+					},
+					{
+						"key": "X-FromAppId",
+						"value": "jimmy-postman"
+					},
+					{
+						"key": "Real-Time",
+						"value": "true"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic QUFJOkFBSQ=="
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pnf-name\" : \"test-device-id\",\n    \"pnf-name2\" : \"device-name\",\n    \"equip-type\" : \"microwave\",\n    \"equip-vendor\" : \"huawei\",\n    \"in-maint\" : \"true\",\n    \"model-customization-id\" : \"\",\n    \"model-invariant-id\" : \"microwave-equipment-id\",\n    \"model-version-id\" : \"huawei-microwave\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:8447/aai/v20/network/pnfs/pnf/test-device-id",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8447",
+					"path": [
+						"aai",
+						"v20",
+						"network",
+						"pnfs",
+						"pnf",
+						"test-device-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Device",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					},
+					{
+						"key": "X-TransactionId",
+						"value": "9999"
+					},
+					{
+						"key": "X-FromAppId",
+						"value": "jimmy-postman"
+					},
+					{
+						"key": "Real-Time",
+						"value": "true"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic QUFJOkFBSQ=="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"device-id\" : \"test-device-id\",\n    \"device-name\" : \"test-device-name\",\n    \"vendor\" : \"test-vendor\",\n    \"system-ip\" : \"test-system-ip\",\n    \"system-ipv4\" : \"test-system-ipv4\",\n    \"description\" : \"We use model-customization-id for NE ID \",\n    \"model-customization-id\" : \"\",\n    \"model-invariant-id\" : \"microwave-equipment-id\",\n    \"model-version-id\" : \"huawei-microwave\",\n    \"relationship-list\" : {\n        \"relationship\": [\n            {\n                \"related-to\": \"pnf\",\n                \"related-link\": \"aai/v20/network/pnfs/pnf/test-device-id\",\n                \"relationship-data\": [\n                    {\n                      \"relationship-key\": \"pnf.pnf-name\",\n                      \"relationship-value\": \"test-device-id\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:8443/aai/v20:network/devices/device/test-device-id",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8443",
+					"path": [
+						"aai",
+						"v20:network",
+						"devices",
+						"device",
+						"test-device-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET New Widget",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-TransactionId",
+						"value": "9999"
+					},
+					{
+						"key": "X-FromAppId",
+						"value": "jimmy-postman"
+					},
+					{
+						"key": "Real-Time",
+						"value": "true"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic QUFJOkFBSQ=="
+					}
+				],
+				"url": {
+					"raw": "https://127.0.0.1:8443/aai/v11/network/new-widgets/new-widget/example-link-name-val-81406",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8443",
+					"path": [
+						"aai",
+						"v11",
+						"network",
+						"new-widgets",
+						"new-widget",
+						"example-link-name-val-81406"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ab3613d9-c83d-4c83-a74c-cd9b7542d8f4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "bda82b5f-5b6f-47f9-82c5-986d1e107a9e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
