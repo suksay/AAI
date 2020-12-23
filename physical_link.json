@@ -1,0 +1,59 @@
+{
+    "link-name": "link-1",
+    "speed-value": "example-speed-value-val-38364",
+    "speed-units": "example-speed-units-val-38748",
+    "circuit-id": "example-circuit-id-val-6558",
+    "dual-mode": "example-dual-mode-val-88045",
+    "management-option": "example-management-option-val-50475",
+    "service-provider-name": "example-service-provider-name-val-35146",
+    "service-provider-bandwidth-up-value": 72134,
+    "service-provider-bandwidth-up-units": "example-service-provider-bandwidth-up-units-val-28989",
+    "service-provider-bandwidth-down-value": 42608,
+    "service-provider-bandwidth-down-units": "example-service-provider-bandwidth-down-units-val-63579",
+    "operational-status": "example-operational-status-val-77818",
+    "relationship-list": {
+        "relationship": [
+          {
+            "related-to": "p-interface",
+            "relationship-label": "tosca.relationships.network.LinksTo",
+            "related-link": "/aai/v20/network/pnfs/pnf/test-device-id/p-interfaces/p-interface/Ethernet0_1",
+            "relationship-data": [
+              {
+                "relationship-key": "pnf.pnf-name",
+                "relationship-value": "test-device-id"
+              },
+              {
+                "relationship-key": "p-interface.interface-name",
+                "relationship-value": "Ethernet0_1"
+              }
+            ],
+            "related-to-property": [
+              {
+                "property-key": "p-interface.prov-status"
+              }
+            ]
+          },
+          {
+            "related-to": "p-interface",
+            "relationship-label": "tosca.relationships.network.LinksTo",
+            "related-link": "/aai/v20/network/pnfs/pnf/test-device-id-1/p-interfaces/p-interface/Ethernet0_2",
+            "relationship-data": [
+              {
+                "relationship-key": "pnf.pnf-name",
+                "relationship-value": "test-device-id-1"
+              },
+              {
+                "relationship-key": "p-interface.interface-name",
+                "relationship-value": "Ethernet0_2"
+              }
+            ],
+            "related-to-property": [
+              {
+                "property-key": "p-interface.prov-status"
+              }
+            ]
+          }
+        ]
+      }
+
+  }
