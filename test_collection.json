@@ -202,7 +202,11 @@
 					}
 				},
 				"url": {
+<<<<<<< HEAD
 					"raw": "https://127.0.0.1:8447/aai/v20/network/devices/device/test-device-id",
+=======
+					"raw": "https://127.0.0.1:844/aai/v20/network/devices/device/test-device-id",
+>>>>>>> a2d3b6f08340174db8eb470b07b6bace4eb815fa
 					"protocol": "https",
 					"host": [
 						"127",
