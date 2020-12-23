@@ -221,50 +221,6 @@
 				}
 			},
 			"response": []
-		},
-		{
-			"name": "GET New Widget",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "X-TransactionId",
-						"value": "9999"
-					},
-					{
-						"key": "X-FromAppId",
-						"value": "jimmy-postman"
-					},
-					{
-						"key": "Real-Time",
-						"value": "true"
-					},
-					{
-						"key": "Authorization",
-						"value": "Basic QUFJOkFBSQ=="
-					}
-				],
-				"url": {
-					"raw": "https://127.0.0.1:8443/aai/v11/network/new-widgets/new-widget/example-link-name-val-81406",
-					"protocol": "https",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8443",
-					"path": [
-						"aai",
-						"v11",
-						"network",
-						"new-widgets",
-						"new-widget",
-						"example-link-name-val-81406"
-					]
-				}
-			},
-			"response": []
 		}
 	],
 	"event": [
