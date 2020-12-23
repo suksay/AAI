@@ -12,7 +12,7 @@
         "relationship": [
             {
                 "related-to": "pnf",
-                "related-link": "aai/v20/netwok/pnfs/pnf/test-device-id",
+                "related-link": "aai/v20/network/pnfs/pnf/test-device-id",
                 "relationship-data": [
                     {
                       "relationship-key": "pnf.pnf-name",
