@@ -1,0 +1,7 @@
+{
+    "vlan-interface": "vlan_1",
+    "vlan-description": "trunk",
+    "in-maint": true,
+    "is-ip-unnumbered": false,
+    "is-private": true
+}
