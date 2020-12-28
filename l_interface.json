@@ -1,12 +1,9 @@
 {
-    "interface-name": "Ethernet0_2",
+    "interface-name": "Ethernet0_3",
     "interface-id": "example-interface-id-val-80170",
     "is-port-mirrored": true,
     "in-maint": true,
-    "prov-status": "example-prov-status-val-64495",
     "is-ip-unnumbered": true,
-    "allowed-address-pairs": "example-allowed-address-pairs-val-3257",
-    "priority": 92417,
     "l2-multicasting": true,
-    "admin-status": "example-admin-status-val-17203"
+    "admin-status": "up"
   }
