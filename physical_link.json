@@ -29,7 +29,8 @@
             ],
             "related-to-property": [
               {
-                "property-key": "p-interface.prov-status"
+                "property-key": "p-interface.equipment-identifier",
+                "property-value": "3"
               }
             ]
           },
@@ -49,7 +50,8 @@
             ],
             "related-to-property": [
               {
-                "property-key": "p-interface.prov-status"
+                "property-key": "p-interface.equipment-identifier",
+                "property-value": "3"
               }
             ]
           }
