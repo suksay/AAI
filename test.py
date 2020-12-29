@@ -100,6 +100,8 @@ def extract_neighbords_table():
 
             neighbordships[device['device-id']].append(link)
 
+    
+    return neighbordships
 
 
 
