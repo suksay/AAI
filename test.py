@@ -83,7 +83,7 @@ def extract_neighbords_table():
 
         for p_interface in device_p_interfaces:
             link = dict()
-            link['local_int_index'] = p_interface['equipment-identifie']
+            link['local_int_index'] = p_interface['equipment-identifier']
             link['local_intf'] = p_interface['interface-name']
 
             URL_P_LINK = '/network'+p_interface['relationship-list']['relationship'][0]['related-link'].splt('network')[1]
