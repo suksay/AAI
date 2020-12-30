@@ -1,0 +1,6 @@
+#Init AAI resource with Janushraph Properties
+
+FROM onap/aai-resources:1.7.2
+
+COPY janusgraph-cached.properties /opt/app/aai-resources/resources/etc/appprops/janusgraph-cached.properties
+COPY janusgraph-realtime.properties /opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
