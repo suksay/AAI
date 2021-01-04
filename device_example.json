@@ -1,0 +1,83 @@
+{
+  "device-id": "example-device-id-val-38417",
+  "esn": "example-esn-val-39560",
+  "device-name": "example-device-name-val-21515",
+  "description": "example-description-val-86348",
+  "vendor": "example-vendor-val-37579",
+  "class": "example-class-val-36382",
+  "type": "example-type-val-1078",
+  "version": "example-version-val-9416",
+  "system-ip": "example-system-ip-val-97374",
+  "system-ipv4": "example-system-ipv4-val-49106",
+  "system-ipv6": "example-system-ipv6-val-82018",
+  "selflink": "example-selflink-val-96955",
+  "operational-status": "example-operational-status-val-44863",
+  "model-customization-id": "example-model-customization-id-val-97230",
+  "model-invariant-id": "example-model-invariant-id-val-56166",
+  "model-version-id": "example-model-version-id-val-85365",
+  "qinq-links": {
+    "qinq-link": [
+      {
+        "link-id": 44454,
+        "port-name": "example-port-name-val-63696",
+        "vlan-id": 97766,
+        "status": "example-status-val-40223"
+      }
+    ]
+  },
+  "eline-links": {
+    "eline-link": [
+      {
+        "device-id": "example-device-id-val-26818",
+        "uni-to-unis": {
+          "uni-to-uni": [
+            {
+              "link-id": "example-link-id-val-4266",
+              "nms-index": "example-nms-index-val-46623",
+              "name": "example-name-val-65868",
+              "port-a": "example-port-a-val-26585",
+              "vlan-list-a": [
+                "example-vlan-list-a-val-73743-1",
+                "example-vlan-list-a-val-83058-2"
+              ],
+              "port-b": "example-port-b-val-31461",
+              "vlan-list-b": [
+                "example-vlan-list-b-val-6647-1",
+                "example-vlan-list-b-val-53881-2"
+              ],
+              "status": "example-status-val-90559"
+            }
+          ]
+        },
+        "uni-to-nnis": {
+          "uni-to-nni": [
+            {
+              "link-id": "example-link-id-val-77255",
+              "nms-index": "example-nms-index-val-47678",
+              "name": "example-name-val-79717",
+              "port": "example-port-val-66215",
+              "vlan-list": [
+                "example-vlan-list-val-30695-1",
+                "example-vlan-list-val-9616-2"
+              ],
+              "qinq-id": "example-qinq-id-val-15922",
+              "status": "example-status-val-95617"
+            }
+          ]
+        },
+        "nni-to-nnis": {
+          "nni-to-nni": [
+            {
+              "link-id": "example-link-id-val-59297",
+              "nms-index": "example-nms-index-val-81468",
+              "name": "example-name-val-33849",
+              "qinq-id-a": "example-qinq-id-a-val-72910",
+              "qinq-id-b": "example-qinq-id-b-val-42789",
+              "status": "example-status-val-87433"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
