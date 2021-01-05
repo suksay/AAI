@@ -9000,6 +9000,7 @@
 				</xml-element>
                 <xml-element java-attribute="uni2Unis" name="uni-2-unis" type="inventory.aai.onap.org.v20.Uni2Unis" />
                 <xml-element java-attribute="uni2Nnis" name="uni-2-nnis" type="inventory.aai.onap.org.v20.Uni2Nnis" />
+                <xml-element java-attribute="nni2Nnis" name="nni-2-nnis" type="inventory.aai.onap.org.v20.Nni2Nnis" />
 				<xml-element java-attribute="relationshipList" name="relationship-list" type="inventory.aai.onap.org.v20.RelationshipList" />
 			</java-attributes>
 			<xml-properties>
@@ -9137,6 +9138,63 @@
 				<xml-property name="dependentOn" value="eline-link" />
 				<xml-property name="container" value="uni-2-nnis" />
 				<xml-property name="uriTemplate" value="/uni-2-nnis/uni-2-nni/{link-id}" />
+				<xml-property name="requiredProps" value="link-id" />
+			</xml-properties>
+		</java-type>
+		<java-type name="Nni2Nnis">
+			<xml-root-element name="nni-2-nnis" />
+			<java-attributes>
+				<xml-element container-type="java.util.ArrayList" java-attribute="nni2Nni" name="nni-2-nni" type="inventory.aai.onap.org.v20.Nni2Nni" />
+			</java-attributes>
+			<xml-properties>
+			</xml-properties>
+		</java-type>
+		<java-type name="Nni2Nni">
+			<xml-root-element name="nni-2-nni" />
+			<java-attributes>
+				<xml-element java-attribute="linkId" name="link-id" required="true" type="java.lang.String" xml-key="true">
+					<xml-properties>
+						<xml-property name="description" value="Link ID." />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="nmsIndex" name="nms-index"  type="java.lang.String">
+					<xml-properties>
+						<xml-property name="description" value="NMS Index in Huawei Device" />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="name" name="name"  type="java.lang.String">
+					<xml-properties>
+						<xml-property name="description" value="Name of Link" />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="qinqIdA" name="qinq-id-a" type="java.lang.String">
+					<xml-properties>
+						<xml-property name="description" value="QinQ A ID." />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="qinqIdB" name="qinq-id-b" type="java.lang.String">
+					<xml-properties>
+						<xml-property name="description" value="QinQ B ID." />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="status" name="status" type="java.lang.String">
+					<xml-properties>
+						<xml-property name="description" value="Status of link" />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="resourceVersion" name="resource-version" type="java.lang.String">
+					<xml-properties>
+						<xml-property name="description" value="Used for optimistic concurrency.  Must be empty on create, valid on update and delete." />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="relationshipList" name="relationship-list" type="inventory.aai.onap.org.v20.RelationshipList" />
+			</java-attributes>
+			<xml-properties>
+				<xml-property name="description" value="Definition of Uni to Nni" />
+				<xml-property name="indexedProps" value="link-id" />
+				<xml-property name="dependentOn" value="eline-link" />
+				<xml-property name="container" value="nni-2-nnis" />
+				<xml-property name="uriTemplate" value="/nni-2-nnis/nni-2-nni/{link-id}" />
 				<xml-property name="requiredProps" value="link-id" />
 			</xml-properties>
 		</java-type>
