@@ -8910,6 +8910,7 @@
 						<xml-property name="description" value="Used for optimistic concurrency.  Must be empty on create, valid on update and delete."/>
 					</xml-properties>
 				</xml-element>
+                <xml-element java-attribute="qinqLinks" name="qinq-links" type="inventory.aai.onap.org.v20.QinqLinks" />
 				<xml-element java-attribute="relationshipList" name="relationship-list" type="inventory.aai.onap.org.v20.RelationshipList"/>
 			</java-attributes>
 			<xml-properties>
@@ -8924,7 +8925,58 @@
             <xml-property name="uriTemplate" value="/network/devices/device/{device-id}"/>
             </xml-properties>
 		</java-type>
-
+		<java-type name="QinqLinks">
+			<xml-properties>
+				<xml-property name="description" value="Collection of qinq connections, typically between huawei device" />
+			</xml-properties>
+			<xml-root-element name="qinq-links" />
+			<java-attributes>
+				<xml-element container-type="java.util.ArrayList" java-attribute="qinqLink" name="qinq-link" type="inventory.aai.onap.org.v20.QinqLink" />
+			</java-attributes>
+			<xml-properties>
+				<xml-property name="maximumDepth" value="0" />
+			</xml-properties>
+		</java-type>
+		<java-type name="QinqLink">
+			<xml-root-element name="qinq-link" />
+			<java-attributes>
+				<xml-element java-attribute="linkId" name="link-id" required="true" type="java.lang.Integer" xml-key="true">
+					<xml-properties>
+						<xml-property name="description" value="Link QinQ ID" />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="portName" name="port-name" type="java.lang.String">
+					<xml-properties>
+						<xml-property name="description" value="Name of port use in this connection" />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="vlanId" name="vlan-id" type="java.lang.Integer">
+					<xml-properties>
+						<xml-property name="description" value="VLAN ID for this Qinq link" />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="status" name="status" type="java.lang.String">
+					<xml-properties>
+						<xml-property name="description" value="Status of link" />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="resourceVersion" name="resource-version" type="java.lang.String">
+					<xml-properties>
+						<xml-property name="description" value="Used for optimistic concurrency.  Must be empty on create, valid on update and delete." />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="relationshipList" name="relationship-list" type="inventory.aai.onap.org.v20.RelationshipList" />
+			</java-attributes>
+			<xml-properties>
+				<xml-property name="description" value="Collection of qinq connections, typically between huawei device" />
+				<xml-property name="indexedProps" value="link-id" />
+				<xml-property name="dependentOn" value="device" />
+				<xml-property name="container" value="qinq-links" />
+				<xml-property name="searchable" value="link-id,status" />
+				<xml-property name="uriTemplate" value="/qinq-links/qinq-link/{link-id}" />
+				<xml-property name="requiredProps" value="link-id" />
+			</xml-properties>
+		</java-type>
 		<java-type name="WanPortConfig">
 			<xml-root-element name="wan-port-config"/>
 			<java-attributes>
