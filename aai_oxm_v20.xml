@@ -8746,7 +8746,7 @@ limitations under the License.
 				<xml-property name="description" value="Definition of Uni to Nni" />
 				<xml-property name="indexedProps" value="link-id" />
 				<xml-property name="dependentOn" value="eline-link" />
-				<xml-property name="container" value="uni-2-nnis" />
+				<xml-property name="container" value="nni-2-nnis" />
 				<xml-property name="uriTemplate" value="/nni-2-nnis/nni-2-nni/{link-id}" />
 				<xml-property name="requiredProps" value="link-id" />
 			</xml-properties>
