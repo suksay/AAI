@@ -7,8 +7,8 @@ services:
         ports:
             - "8452:8452"
         volumes: 
-            - ~/AAI/schema/aai_oxm_v19.xml:/opt/app/aai-schema-service/resources/schema/onap/oxm/v19/
-            - ~/AAI/dbedgerule/DbEdgeRules_v19.json:/opt/app/aai-schema-service/resources/schema/onap/dbedgerules/v19/
+            - ~/AAI/schema/aai_oxm_v19.xml:/opt/app/aai-schema-service/resources/schema/onap/oxm/v19/aai_oxm_v19.xml
+            - ~/AAI/dbedgerule/DbEdgeRules_v19.json:/opt/app/aai-schema-service/resources/schema/onap/dbedgerules/v19/DbEdgeRules_v19.json
         networks:
             - storage_network   
     #Cassandra
