@@ -1,5 +1,82 @@
 {
 	"rules": [
+        {
+			"from": "device",
+			"to": "pnf",
+			"label": "org.onap.relationships.inventory.Uses",
+			"direction": "OUT",
+			"multiplicity": "ONE2ONE",
+			"contains-other-v": "NONE",
+			"delete-other-v": "NONE",
+			"prevent-delete": "NONE",
+			"default": "true",
+			"description":""
+        },
+        {
+			"from": "qinq-link",
+			"to": "device",
+			"label": "org.onap.relationships.inventory.BelongsTo",
+			"direction": "OUT",
+			"multiplicity": "MANY2ONE",
+			"contains-other-v": "!${direction}",
+			"delete-other-v": "!${direction}",
+			"SVC-INFRA": "NONE",
+			"prevent-delete": "NONE",
+			"default": "true",
+			"description":"A qinq-link belongs to a device."
+        },
+        {
+			"from": "eline-link",
+			"to": "device",
+			"label": "org.onap.relationships.inventory.BelongsTo",
+			"direction": "OUT",
+			"multiplicity": "ONE2ONE",
+			"contains-other-v": "!${direction}",
+			"delete-other-v": "!${direction}",
+			"SVC-INFRA": "NONE",
+			"prevent-delete": "NONE",
+			"default": "true",
+			"description":"A eline-link belongs to a device."
+        },
+        {
+			"from": "uni-to-uni",
+			"to": "eline-link",
+			"label": "org.onap.relationships.inventory.BelongsTo",
+			"direction": "OUT",
+			"multiplicity": "MANY2ONE",
+			"contains-other-v": "!${direction}",
+			"delete-other-v": "!${direction}",
+			"SVC-INFRA": "NONE",
+			"prevent-delete": "NONE",
+			"default": "true",
+			"description":""
+        },
+        {
+			"from": "uni-to-nni",
+			"to": "eline-link",
+			"label": "org.onap.relationships.inventory.BelongsTo",
+			"direction": "OUT",
+			"multiplicity": "MANY2ONE",
+			"contains-other-v": "!${direction}",
+			"delete-other-v": "!${direction}",
+			"SVC-INFRA": "NONE",
+			"prevent-delete": "NONE",
+			"default": "true",
+			"description":""
+        },
+        {
+			"from": "nni-to-nni",
+			"to": "eline-link",
+			"label": "org.onap.relationships.inventory.BelongsTo",
+			"direction": "OUT",
+			"multiplicity": "MANY2ONE",
+			"contains-other-v": "!${direction}",
+			"delete-other-v": "!${direction}",
+			"SVC-INFRA": "NONE",
+			"prevent-delete": "NONE",
+			"default": "true",
+			"description":""
+        },
 		{
 			"from": "allotted-resource",
 			"to": "allotted-resource",
