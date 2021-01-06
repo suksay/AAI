@@ -29,7 +29,7 @@ services:
             - ~/AAI/schema:/opt/app/aai-resources/resources/schema/onap/oxm/v19/
             - ~/AAI/dbedgerule:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v19/
             - ~/AAI/appprops/janusgraph-realtime.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
-            - ~/AAI/appprops/janusgraph-cache.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-cache.properties
+            - ~/AAI/appprops/janusgraph-cached.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-cached.properties
         networks:
             - storage_network 
 
