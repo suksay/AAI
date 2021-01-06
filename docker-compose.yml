@@ -1,15 +1,6 @@
 version: '3.3'
 
-services:
-    #AAI Schema Service
-    aai-schema-service:
-        image: onap/aai-schema-service:1.7.13
-        container_name: aai-schema-service
-        ports:
-            - "8452:8452"
-        networks:
-            - storage_network   
-    
+services:    
     #AAI Resources
     aai-resources:
         #Change janusgrap properties files in aai-resource with cassandra hostname
