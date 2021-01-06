@@ -40,7 +40,7 @@ services:
             #- ~/AAI/dbedgerule/DbEdgeRules_v19.json:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v19/DbEdgeRules_v19.json
             - ~/AAI/appprops/janusgraph-realtime.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
             - ~/AAI/appprops/janusgraph-cached.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-cached.properties
-            - ~/AAI/application.properties:/opt/app/aai-resources/resource/application.properties
+            - ~/AAI/application.properties:/opt/app/aai-resources/resources/application.properties
         networks:
             - storage_network 
 
