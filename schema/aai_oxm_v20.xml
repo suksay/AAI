@@ -8932,7 +8932,7 @@
 			</xml-properties>
 			<xml-root-element name="qinq-links" />
 			<java-attributes>
-				<xml-element container-type="java.util.ArrayList" java-attribute="qinqLink" name="qinq-link" type="inventory.aai.onap.org.v19.QinqLink" />
+				<xml-element container-type="java.util.ArrayList" java-attribute="qinqLink" name="qinq-link" type="inventory.aai.onap.org.v20.QinqLink" />
 			</java-attributes>
 		</java-type>
 		<java-type name="QinqLink">
