@@ -1,16 +1,7 @@
 version: '3.3'
 
 services:
-    aai-schema-service:
-        image: onap/aai-schema-service:1.6.9
-        container_name: aai-schema-service
-        ports:
-            - "8452:8452"
-        volumes: 
-            - ~/AAI/schema:/opt/app/aai-schema-service/resources/schema/onap/oxm/v20/
-            - ~/AAI/dbedgerule:/opt/app/aai-schema-service/resources/schema/onap/dbedgerules/v20/
-        networks:
-            - storage_network   
+
     #Cassandra
     cassandra:
         image: cassandra:3.11
@@ -32,15 +23,13 @@ services:
         container_name: aai-resources
         depends_on: 
             - cassandra
-            - aai-schema-service
         ports:
             - "8447:8447"
         volumes: 
-            #- ~/AAI/schema:/opt/app/aai-resources/resources/schema/onap/oxm/v20/
-            #- ~/AAI/dbedgerule:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v20/
-            - ~/AAI/application.properties:/opt/app/aai-resources/resources/application.properties
+            - ~/AAI/schema:/opt/app/aai-resources/resources/schema/onap/oxm/v19/
+            - ~/AAI/dbedgerule:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v19/
             - ~/AAI/appprops/janusgraph-realtime.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
-            - ~/AAI/app:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v20/
+            - ~/AAI/appprops/janusgraph-cache.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-cache.properties
         networks:
             - storage_network 
 
