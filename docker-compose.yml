@@ -1,17 +1,20 @@
 version: '3.3'
 
-services:    
+services:
+
     #AAI Resources
     aai-resources:
         #Change janusgrap properties files in aai-resource with cassandra hostname
-        build:
-           context: .
-           dockerfile: aai_resources_init
+        image: onap/aai-resources:1.7.2
         container_name: aai-resources
         #depends_on: 
         #    - jce-cassandra
         ports:
             - "8447:8447"
+        volumes: 
+            - ~/AAI/schema:/opt/app/aai-resources/resources/schema/onap/oxm/v20/
+            - ~/AAI/dbedgerule:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v20/
+            - ~/AAI/appprops:/opt/app/aai-resources/resources/etc/appprops/
         networks:
             - storage_network    
 
