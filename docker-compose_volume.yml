@@ -30,8 +30,9 @@ services:
     aai-resources:
         image: onap/aai-resources:1.7.2
         container_name: aai-resources
-        #depends_on: 
-        #    - jce-cassandra
+        depends_on: 
+            - jce-cassandra
+            - aai-schema-service
         ports:
             - "8447:8447"
         volumes: 
@@ -46,5 +47,3 @@ services:
 networks:
     storage_network:
         driver: bridge
-
-
