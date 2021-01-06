@@ -26,8 +26,8 @@ services:
         ports:
             - "8447:8447"
         volumes: 
-            - ~/AAI/schema/aai_oxm_v19.xml:/opt/app/aai-resources/resources/schema/onap/oxm/v19/
-            - ~/AAI/dbedgerule/DbEdgeRules_v19.json:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v19/
+            - ~/AAI/schema/aai_oxm_v19.xml:/opt/app/aai-resources/resources/schema/onap/oxm/v19/aai_oxm_v19.xml
+            - ~/AAI/dbedgerule/DbEdgeRules_v19.json:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v19/DbEdgeRules_v19.json
             - ~/AAI/appprops/janusgraph-realtime.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
             - ~/AAI/appprops/janusgraph-cached.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-cached.properties
         networks:
