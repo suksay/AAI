@@ -4,7 +4,6 @@ services:
 
     #AAI Resources
     aai-resources:
-        #Change janusgrap properties files in aai-resource with cassandra hostname
         image: onap/aai-resources:1.7.2
         container_name: aai-resources
         #depends_on: 
@@ -14,7 +13,8 @@ services:
         volumes: 
             - ~/AAI/schema:/opt/app/aai-resources/resources/schema/onap/oxm/v20/
             - ~/AAI/dbedgerule:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v20/
-            - ~/AAI/appprops:/opt/app/aai-resources/resources/etc/appprops/
+            - ~/AAI/appprops/janusgraph-cached.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-cached.properties
+            - ~/AAI/appprops/janusgraph-realtime.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
         networks:
             - storage_network    
 
@@ -35,3 +35,5 @@ services:
 networks:
     storage_network:
         driver: bridge
+
+
