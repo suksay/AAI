@@ -2,22 +2,16 @@ version: '3.3'
 
 services:
 
-    #AAI Resources
-    aai-resources:
-        image: onap/aai-resources:1.7.2
-        container_name: aai-resources
-        #depends_on: 
-        #    - jce-cassandra
+    aai-schema-service:
+        image: onap/aai-schema-service:1.7.13
+        container_name: aai-schema-service
         ports:
-            - "8447:8447"
-        volumes: 
-            - ~/AAI/schema:/opt/app/aai-resources/resources/schema/onap/oxm/v20/
-            - ~/AAI/dbedgerule:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v20/
-            - ~/AAI/appprops/janusgraph-cached.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-cached.properties
-            - ~/AAI/appprops/janusgraph-realtime.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
+            - "8452:8452"
+       volumes: 
+            - ~/AAI/schema:/opt/app/aai-schema-service/resources/schema/onap/oxm/v20/
+            - ~/AAI/dbedgerule:/opt/app/aai-schema-service/resources/schema/onap/dbedgerules/v20/
         networks:
-            - storage_network    
-
+            - storage_network   
     #Cassandra
     cassandra:
         image: cassandra:3.11
@@ -31,6 +25,24 @@ services:
             - "9160:9160"
         networks:
             - storage_network
+
+            
+    #AAI Resources
+    aai-resources:
+        image: onap/aai-resources:1.7.2
+        container_name: aai-resources
+        #depends_on: 
+        #    - jce-cassandra
+        ports:
+            - "8447:8447"
+        volumes: 
+            #- ~/AAI/schema:/opt/app/aai-resources/resources/schema/onap/oxm/v20/
+            #- ~/AAI/dbedgerule:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v20/
+            - ~/AAI/application.properties:/opt/app/aai-resources/resources/application.properties
+            - ~/AAI/appprops/janusgraph-realtime.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
+            - ~/AAI/app:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v20/
+        networks:
+            - storage_network 
 
 networks:
     storage_network:
