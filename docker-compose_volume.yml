@@ -1,16 +1,7 @@
 version: '3.3'
 
 services:
-    aai-schema-service:
-        image: onap/aai-schema-service:1.7.13
-        container_name: aai-schema-service
-        ports:
-            - "8452:8452"
-        volumes: 
-            - ~/AAI/schema/aai_oxm_v19.xml:/opt/app/aai-schema-service/resources/schema/onap/oxm/v19/aai_oxm_v19.xml
-            - ~/AAI/dbedgerule/DbEdgeRules_v19.json:/opt/app/aai-schema-service/resources/schema/onap/dbedgerules/v19/DbEdgeRules_v19.json
-        networks:
-            - storage_network   
+
     #Cassandra
     cassandra:
         image: cassandra:3.11
@@ -28,19 +19,17 @@ services:
             
     #AAI Resources
     aai-resources:
-        image: onap/aai-resources:1.7.2
+        image: onap/aai-resources:1.6.6
         container_name: aai-resources
         depends_on: 
             - cassandra
-            - aai-schema-service
         ports:
             - "8447:8447"
         volumes: 
-            #- ~/AAI/schema/aai_oxm_v19.xml:/opt/app/aai-resources/resources/schema/onap/oxm/v19/aai_oxm_v19.xml
-            #- ~/AAI/dbedgerule/DbEdgeRules_v19.json:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v19/DbEdgeRules_v19.json
+            - ~/AAI/schema/aai_oxm_v19.xml:/opt/app/aai-resources/resources/schema/onap/oxm/v19/aai_oxm_v19.xml
+            - ~/AAI/dbedgerule/DbEdgeRules_v19.json:/opt/app/aai-resources/resources/schema/onap/dbedgerules/v19/DbEdgeRules_v19.json
             - ~/AAI/appprops/janusgraph-realtime.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
             - ~/AAI/appprops/janusgraph-cached.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-cached.properties
-            - ~/AAI/application.properties:/opt/app/aai-resources/resources/application.properties
         networks:
             - storage_network 
 
