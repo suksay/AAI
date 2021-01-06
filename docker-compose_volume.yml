@@ -19,7 +19,7 @@ services:
             
     #AAI Resources
     aai-resources:
-        image: onap/aai-resources:1.6.6
+        image: onap/aai-resources:1.7.2
         container_name: aai-resources
         depends_on: 
             - cassandra
