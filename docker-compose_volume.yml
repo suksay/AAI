@@ -6,7 +6,7 @@ services:
         container_name: aai-schema-service
         ports:
             - "8452:8452"
-       volumes: 
+        volumes: 
             - ~/AAI/schema:/opt/app/aai-schema-service/resources/schema/onap/oxm/v20/
             - ~/AAI/dbedgerule:/opt/app/aai-schema-service/resources/schema/onap/dbedgerules/v20/
         networks:
@@ -46,3 +46,5 @@ services:
 networks:
     storage_network:
         driver: bridge
+
+
