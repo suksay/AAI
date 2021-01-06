@@ -20,7 +20,6 @@
 			"multiplicity": "MANY2ONE",
 			"contains-other-v": "!${direction}",
 			"delete-other-v": "!${direction}",
-			"SVC-INFRA": "NONE",
 			"prevent-delete": "NONE",
 			"default": "true",
 			"description":"A qinq-link belongs to a device."
@@ -33,7 +32,6 @@
 			"multiplicity": "ONE2ONE",
 			"contains-other-v": "!${direction}",
 			"delete-other-v": "!${direction}",
-			"SVC-INFRA": "NONE",
 			"prevent-delete": "NONE",
 			"default": "true",
 			"description":"A eline-link belongs to a device."
@@ -46,7 +44,6 @@
 			"multiplicity": "MANY2ONE",
 			"contains-other-v": "!${direction}",
 			"delete-other-v": "!${direction}",
-			"SVC-INFRA": "NONE",
 			"prevent-delete": "NONE",
 			"default": "true",
 			"description":""
@@ -59,7 +56,6 @@
 			"multiplicity": "MANY2ONE",
 			"contains-other-v": "!${direction}",
 			"delete-other-v": "!${direction}",
-			"SVC-INFRA": "NONE",
 			"prevent-delete": "NONE",
 			"default": "true",
 			"description":""
@@ -72,7 +68,6 @@
 			"multiplicity": "MANY2ONE",
 			"contains-other-v": "!${direction}",
 			"delete-other-v": "!${direction}",
-			"SVC-INFRA": "NONE",
 			"prevent-delete": "NONE",
 			"default": "true",
 			"description":""
