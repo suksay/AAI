@@ -8860,11 +8860,26 @@
         <java-type name="QinqLink">
             <xml-root-element name="qinq-link"/>
             <java-attributes>
-                <xml-element java-attribute="qinqLinkId" name="qinq-link-id" required="true" type="java.lang.String" xml-key="true">
+                <xml-element java-attribute="qinqLinkId" name="qinq-link-id" required="true" type="java.lang.Integer" xml-key="true">
                     <xml-properties>
                         <xml-property name="description" value="Value defined by orchestration to identify this service across ONAP."/>
                     </xml-properties>
                 </xml-element>
+                				<xml-element java-attribute="portName" name="port-name" type="java.lang.String">
+					<xml-properties>
+						<xml-property name="description" value="Name of port use in this connection" />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="qinqVlanId" name="qinq-vlan-id" type="java.lang.Integer">
+					<xml-properties>
+						<xml-property name="description" value="VLAN ID for this Qinq link" />
+					</xml-properties>
+				</xml-element>
+				<xml-element java-attribute="status" name="status" type="java.lang.String">
+					<xml-properties>
+						<xml-property name="description" value="Status of link" />
+					</xml-properties>
+				</xml-element>
                 <xml-element java-attribute="resourceVersion" name="resource-version" type="java.lang.String">
                     <xml-properties>
                         <xml-property name="description" value="Used for optimistic concurrency.  Must be empty on create, valid on update and delete."/>
