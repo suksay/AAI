@@ -13,7 +13,7 @@
             "description": ""
         },
         {
-            "from": "uni-2-uni",
+            "from": "uni-to-uni",
             "to": "device",
             "label": "org.onap.relationships.inventory.BelongsTo",
             "direction": "OUT",
@@ -25,7 +25,7 @@
             "description": ""
         },
         {
-            "from": "uni-2-nni",
+            "from": "uni-to-nni",
             "to": "device",
             "label": "org.onap.relationships.inventory.BelongsTo",
             "direction": "OUT",
@@ -37,7 +37,7 @@
             "description": ""
         },
         {
-            "from": "nni-2-nni",
+            "from": "nni-to-nni",
             "to": "device",
             "label": "org.onap.relationships.inventory.BelongsTo",
             "direction": "OUT",
