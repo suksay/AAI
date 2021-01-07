@@ -9056,7 +9056,7 @@
 						<xml-property name="description" value="QinQ A Link ID." />
 					</xml-properties>
 				</xml-element>
-				<xml-element java-attribute="qinqLinkIdA" name="qinq-link-id-b" type="java.lang.String">
+				<xml-element java-attribute="qinqLinkIdB" name="qinq-link-id-b" type="java.lang.String">
 					<xml-properties>
 						<xml-property name="description" value="QinQ B Link ID." />
 					</xml-properties>
