@@ -8851,9 +8851,6 @@
 		</java-type>
 
         <java-type name="QinqLinks">
-            <xml-properties>
-                <xml-property name="description" value="Collection of objects that group service instances."/>
-            </xml-properties>
             <xml-root-element name="qinq-links"/>
             <java-attributes>
                 <xml-element container-type="java.util.ArrayList" java-attribute="qinqLink" name="qinq-link" type="inventory.aai.onap.org.v19.QinqLink"/>
@@ -8863,7 +8860,7 @@
         <java-type name="QinqLink">
             <xml-root-element name="qinq-link"/>
             <java-attributes>
-                <xml-element java-attribute="qinqLinkId" name="qinq-link-id" required="true" type="java.lang.Integer" xml-key="true">
+                <xml-element java-attribute="qinqLinkId" name="qinq-link-id" required="true" type="java.lang.String" xml-key="true">
                     <xml-properties>
                         <xml-property name="description" value="Value defined by orchestration to identify this service across ONAP."/>
                     </xml-properties>
@@ -8891,7 +8888,7 @@
                 <xml-element java-attribute="relationshipList" name="relationship-list" type="inventory.aai.onap.org.v19.RelationshipList"/>
             </java-attributes>
             <xml-properties>
-                <xml-property name="description" value="Object that group service instances."/>
+                <xml-property name="description" value="Definitin of Qinq Link ."/>
                 <xml-property name="indexedProps" value="qinq-link-id"/>
                 <xml-property name="uniqueProps" value="qinq-link-id"/>
                 <xml-property name="container" value="qinq-links"/>
@@ -9002,7 +8999,7 @@
 				</xml-element>
 				<xml-element java-attribute="qinqLinkId" name="qinq-link-id" type="java.lang.String">
 					<xml-properties>
-						<xml-property name="description" value="QinQ ID." />
+						<xml-property name="description" value="QinQ Link ID." />
 					</xml-properties>
 				</xml-element>
 				<xml-element java-attribute="status" name="status" type="java.lang.String">
