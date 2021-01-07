@@ -13,7 +13,7 @@
             "description": ""
         },
         {
-            "from": "uni-to-uni",
+            "from": "uni2-uni",
             "to": "device",
             "label": "org.onap.relationships.inventory.BelongsTo",
             "direction": "OUT",
