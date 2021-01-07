@@ -8834,7 +8834,7 @@
                 <xml-element java-attribute="qinqLinks" name="qinq-links" type="inventory.aai.onap.org.v19.QinqLinks"/>
                 <xml-element java-attribute="Uni2Unis" name="uni-2-unis" type="inventory.aai.onap.org.v19.Uni2Unis"/>
                 <xml-element java-attribute="Uni2Nnis" name="uni-2-nnis" type="inventory.aai.onap.org.v19.Uni2Nnis"/>
-                <xml-element java-attribute="Uni2Unis" name="nni-2-nnis" type="inventory.aai.onap.org.v19.Nni2Nnis"/>
+                <xml-element java-attribute="Nni2Nnis" name="nni-2-nnis" type="inventory.aai.onap.org.v19.Nni2Nnis"/>
 				<xml-element java-attribute="relationshipList" name="relationship-list" type="inventory.aai.onap.org.v19.RelationshipList"/>
 			</java-attributes>
 			<xml-properties>
