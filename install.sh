@@ -2,7 +2,7 @@ export AAI_ADDRESS="localhost"
 export AAI_USERNAME="AAI"
 export AAI_PASSWORD="AAI"
 
-#Create complexe device
+echo 'Create complexe device'
 curl -k --user AAI:AAI --request PUT 'https://localhost:8447/aai/v19/network/devices/device/test2' \
 --header 'X-TransactionId: 999' \
 --header 'X-FromAppId: AAI' \
@@ -18,7 +18,7 @@ curl -k --user AAI:AAI --request PUT 'https://localhost:8447/aai/v19/network/dev
     "description" : "We use model-customization-id for NE ID "
 }'
 
-#Add qinq
+echo 'Add qinq'
 curl -k --user AAI:AAI --location --request PUT 'https://localhost:8447/aai/v19/network/devices/device/test2/qinq-links/qinq-link/link1' \
 --header 'X-TransactionId: 999' \
 --header 'X-FromAppId: AAI' \
@@ -33,7 +33,7 @@ curl -k --user AAI:AAI --location --request PUT 'https://localhost:8447/aai/v19/
 }' 
 
 
-#Add uni-2-uni
+echo 'Add uni-2-uni'
 curl -k --user AAI:AAI --location --request PUT 'https://localhost:8447/aai/v19/network/devices/device/test2/uni-2-unis/uni2-uni/link2' \
 --header 'X-TransactionId: 999' \
 --header 'X-FromAppId: AAI' \
@@ -58,7 +58,7 @@ curl -k --user AAI:AAI --location --request PUT 'https://localhost:8447/aai/v19/
 }' 
 
 
-#Add uni-2-nni
+echo 'Add uni-2-nni'
 
 curl -k --user AAI:AAI --location --request PUT 'https://localhost:8447/aai/v19/network/devices/device/test2/uni-2-nnis/uni2-nni/test-uni-2-nni' \
 --header 'X-TransactionId: 999' \
