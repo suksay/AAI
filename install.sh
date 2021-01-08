@@ -26,11 +26,10 @@ curl -k --user AAI:AAI --location --request PUT 'https://localhost:8447/aai/v19/
 --header 'depth: all' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "qinq-link-id": link1,
+    "qinq-link-id": "link1",
     "port-name": "example-port-name",
     "qinq-vlan-id": "de",
-    "status": "example-status-val-47719",
-  
+    "status": "example-status-val-47719"
 }' 
 
 
